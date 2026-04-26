@@ -1,0 +1,10 @@
+services:
+  personal-card-site:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: personal-card-site:latest
+    container_name: personal-card-site
+    ports:
+      - "8080:80"
+    restart: unless-stopped
