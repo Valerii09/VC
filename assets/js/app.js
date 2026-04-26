@@ -7,45 +7,47 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function initResumeDownload() {
-  const link = document.querySelector("[data-download-cv]");
-  if (!link) {
+  const button = document.querySelector("[data-download-cv]");
+  if (!button) {
     return;
   }
 
-  link.addEventListener("click", async (event) => {
+  button.addEventListener("click", (event) => {
     event.preventDefault();
 
-    if (!window.fetch || window.location.protocol === "file:") {
-      forceDownloadByNavigation(link);
+    const language = document.documentElement.lang === "en" ? "en" : "ru";
+    const resume = window.RESUME_FILES?.[language] || window.RESUME_FILES?.ru;
+    if (!resume) {
       return;
     }
 
-    try {
-      const response = await fetch(link.href);
-      if (!response.ok) {
-        throw new Error("Resume request failed");
-      }
-      const blob = await response.blob();
-      const url = URL.createObjectURL(blob);
-      const download = document.createElement("a");
-      download.href = url;
-      download.download = link.getAttribute("download") || "Trufanov_Valerii_CV.pdf";
-      document.body.append(download);
-      download.click();
-      download.remove();
-      URL.revokeObjectURL(url);
-    } catch {
-      forceDownloadByNavigation(link);
-    }
+    const blob = base64ToBlob(resume.base64, resume.mimeType);
+    const url = URL.createObjectURL(blob);
+    const download = document.createElement("a");
+    download.href = url;
+    download.download = resume.fileName;
+    document.body.append(download);
+    download.click();
+    download.remove();
+    window.setTimeout(() => URL.revokeObjectURL(url), 1000);
   });
 }
 
-function forceDownloadByNavigation(link) {
-  const fallback = document.createElement("a");
-  fallback.href = link.href;
-  fallback.download = link.getAttribute("download") || "Trufanov_Valerii_CV.pdf";
-  fallback.rel = "noopener";
-  document.body.append(fallback);
-  fallback.click();
-  fallback.remove();
+function base64ToBlob(base64, mimeType) {
+  const byteCharacters = atob(base64);
+  const chunks = [];
+  const chunkSize = 8192;
+
+  for (let offset = 0; offset < byteCharacters.length; offset += chunkSize) {
+    const chunk = byteCharacters.slice(offset, offset + chunkSize);
+    const bytes = new Uint8Array(chunk.length);
+
+    for (let index = 0; index < chunk.length; index += 1) {
+      bytes[index] = chunk.charCodeAt(index);
+    }
+
+    chunks.push(bytes);
+  }
+
+  return new Blob(chunks, { type: mimeType });
 }

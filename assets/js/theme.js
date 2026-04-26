@@ -1,9 +1,9 @@
-const STORAGE_KEY = "personal-card-theme";
+const THEME_STORAGE_KEY = "personal-card-theme";
 
 function initTheme() {
   const root = document.documentElement;
   const toggle = document.querySelector("[data-theme-toggle]");
-  const saved = localStorage.getItem(STORAGE_KEY);
+  const saved = localStorage.getItem(THEME_STORAGE_KEY);
   const preferred = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
   const initialTheme = saved || root.dataset.theme || preferred;
 
@@ -12,7 +12,7 @@ function initTheme() {
   toggle?.addEventListener("click", () => {
     const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
     setTheme(nextTheme);
-    localStorage.setItem(STORAGE_KEY, nextTheme);
+    localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
   });
 
   function setTheme(theme) {

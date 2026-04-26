@@ -63,6 +63,19 @@
   line-height: 1;
 }
 
+[data-i18n] {
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease,
+    filter 180ms ease;
+}
+
+.language-changing [data-i18n] {
+  opacity: 0;
+  transform: translateY(4px);
+  filter: blur(2px);
+}
+
 .theme-toggle {
   min-width: 70px;
 }

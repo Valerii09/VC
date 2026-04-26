@@ -12,6 +12,7 @@
   <script defer src="assets/js/theme.js"></script>
   <script defer src="assets/js/i18n.js"></script>
   <script defer src="assets/js/animations.js"></script>
+  <script defer src="assets/js/resume-data.js"></script>
   <script defer src="assets/js/app.js"></script>
 </head>
 <body>
@@ -29,8 +30,8 @@
       </nav>
 
       <div class="header-actions">
-        <a class="download-link" href="assets/Trufanov_Valerii_CV_ru.pdf.download" download="Trufanov_Valerii_CV_ru.pdf" data-download-cv data-i18n="actions.download">Скачать CV</a>
-        <button class="icon-toggle lang-toggle" type="button" data-lang-toggle aria-label="Switch language">RU</button>
+        <button class="download-link" type="button" data-download-cv data-i18n="actions.download">Скачать CV</button>
+        <button class="icon-toggle lang-toggle" type="button" data-lang-toggle aria-label="Switch to English">EN</button>
         <button class="icon-toggle theme-toggle" type="button" data-theme-toggle aria-label="Переключить тему">DARK</button>
       </div>
     </div>
@@ -38,12 +39,13 @@
 
   <main id="home" class="hero container">
     <section class="hero-copy reveal" aria-labelledby="hero-title">
-      <p class="status"><span class="status-lamp"></span><span data-i18n="hero.status">Открыт к сильным backend-проектам</span></p>
+      <p class="status"><span class="status-lamp"></span><span data-i18n="hero.status">Готов к сильным backend-командам</span></p>
       <h1 id="hero-title"><span data-i18n="hero.firstName">Валерий</span><br><span class="accent" data-i18n="hero.lastName">Труфанов</span><span class="caret" aria-hidden="true"></span></h1>
       <p class="role" data-i18n="hero.role">Java Backend Developer / Spring / PostgreSQL / CI/CD</p>
       <p class="lead" data-i18n="hero.lead">
-        Разрабатываю backend-сервисы на Java и Spring Boot для корпоративных систем с большими объемами данных.
-        Основной фокус: REST API, PostgreSQL, ORM/SQL-оптимизация, асинхронная обработка, CI/CD и устойчивость production-сервисов.
+        Проектирую и развиваю Java/Spring Boot backend для корпоративных систем, где важны данные, роли,
+        интеграции и стабильный production. Беру на себя REST API, PostgreSQL, ORM/SQL-оптимизацию,
+        асинхронную обработку, CI/CD и разбор сложных инцидентов.
       </p>
       <div class="hero-actions">
         <a class="btn primary" href="#contacts" data-i18n="hero.cta">Обсудить задачу</a>
@@ -54,10 +56,10 @@
     <aside class="metrics reveal" aria-label="Ключевые показатели">
       <p class="panel-label" data-i18n="metrics.title">Ключевые показатели</p>
       <div class="metric-grid">
-        <article><strong>4</strong><span data-i18n="metrics.exp">года коммерческого опыта</span></article>
-        <article><strong>100k+</strong><span data-i18n="metrics.data">записей в выборках без OOM</span></article>
-        <article><strong>50%</strong><span data-i18n="metrics.speed">сокращение времени отчетов</span></article>
-        <article><strong>B2</strong><span data-i18n="metrics.lang">английский для рабочих задач</span></article>
+        <article><strong>4</strong><span data-i18n="metrics.exp">года опыта: backend, mobile, IT</span></article>
+        <article><strong>3+</strong><span data-i18n="metrics.backend">года Java / Spring Boot</span></article>
+        <article><strong>100k+</strong><span data-i18n="metrics.data">записей в отчетах без падений</span></article>
+        <article><strong>50%</strong><span data-i18n="metrics.speed">быстрее тяжелые отчеты и выборки</span></article>
       </div>
     </aside>
   </main>
@@ -65,18 +67,18 @@
   <section id="skills" class="section container">
     <div class="section-title reveal">
       <span>01</span>
-      <h2 data-i18n="skills.title">Стек и компетенции</h2>
+      <h2 data-i18n="skills.title">Стек и сильные стороны</h2>
     </div>
     <div class="skill-grid reveal">
-      <article><p>Backend</p><h3>Java 8/17, Spring Boot, Spring Framework 6, REST API</h3></article>
-      <article><p>Data</p><h3>PostgreSQL, Hibernate, Liquibase, ORM tuning</h3></article>
-      <article><p>Infra</p><h3>Docker, Tomcat, Jenkins, Groovy, Shell</h3></article>
-      <article><p>Search</p><h3>Apache Solr 7, индексация, диагностика</h3></article>
-      <article><p>Async</p><h3>JMS, ActiveMQ, event-driven, concurrency</h3></article>
-      <article><p>Quality</p><h3>JUnit, Mockito, SonarQube, Logback, MDC</h3></article>
-      <article><p>Mobile</p><h3>Kotlin, Android SDK, MVVM, Retrofit</h3></article>
-      <article><p>AI/RAG</p><h3>LangChain, Ollama, Supabase Vector, OpenRouter</h3></article>
-      <article><p>IT Ops</p><h3>Linux, Windows Server, Active Directory, DNS</h3></article>
+      <article><p data-i18n="skills.backend.label">Backend</p><h3 data-i18n="skills.backend.text">Java 8/17, Spring Boot, Spring Framework 6, REST API</h3></article>
+      <article><p data-i18n="skills.data.label">Data</p><h3 data-i18n="skills.data.text">PostgreSQL, Hibernate, Liquibase, оптимизация SQL/ORM</h3></article>
+      <article><p data-i18n="skills.infra.label">Infra</p><h3 data-i18n="skills.infra.text">Docker, Tomcat, Jenkins, Groovy, Shell</h3></article>
+      <article><p data-i18n="skills.search.label">Search</p><h3 data-i18n="skills.search.text">Apache Solr 7, схемы индексации, диагностика поиска</h3></article>
+      <article><p data-i18n="skills.async.label">Async</p><h3 data-i18n="skills.async.text">JMS, ActiveMQ, event-driven подход, concurrency</h3></article>
+      <article><p data-i18n="skills.quality.label">Quality</p><h3 data-i18n="skills.quality.text">JUnit, Mockito, SonarQube, Logback, MDC</h3></article>
+      <article><p data-i18n="skills.mobile.label">Mobile</p><h3 data-i18n="skills.mobile.text">Kotlin, Android SDK, MVVM, Retrofit</h3></article>
+      <article><p data-i18n="skills.ai.label">AI/RAG</p><h3 data-i18n="skills.ai.text">LangChain, Ollama, Supabase Vector, OpenRouter</h3></article>
+      <article><p data-i18n="skills.ops.label">IT Ops</p><h3 data-i18n="skills.ops.text">Linux, Windows Server, Active Directory, DNS</h3></article>
     </div>
   </section>
 
@@ -95,12 +97,12 @@
           <span>backend</span>
         </header>
         <ul>
-          <li data-i18n="job1.item1">Развивал backend корпоративной LMS-системы для выборок более 100k записей: внедрил безопасную пагинацию и стриминг вместо полной загрузки в память.</li>
-          <li data-i18n="job1.item2">Оптимизировал SQL-запросы и ORM-логику, снижал количество запросов к БД и сокращал время отчетов и выборок до 50%.</li>
-          <li data-i18n="job1.item3">Устранял production-проблемы конкурентного доступа: thread-safe хранение, атомарные операции, разбор многопоточности.</li>
-          <li data-i18n="job1.item4">Разрабатывал REST API с учетом ролевой модели, фильтрации и расширяемой системы прав; реализовал RolePermissionsService без изменения core.</li>
-          <li data-i18n="job1.item5">Диагностировал кластерную рассинхронизацию internal/external контуров, FK-зависимости, routing и проблемы JMS/ActiveMQ.</li>
-          <li data-i18n="job1.item6">Дорабатывал CI/CD на Jenkins, Groovy и Shell; работал с Docker, docker-compose, Tomcat, Solr, Liquibase и PostgreSQL.</li>
+          <li data-i18n="job1.item1">Развивал backend корпоративной LMS: заменил полные выборки на безопасную пагинацию и стриминг, чтобы обрабатывать 100k+ записей без OOM и деградации.</li>
+          <li data-i18n="job1.item2">Ускорял отчеты и тяжелые выборки до 50% за счет оптимизации SQL, ORM-логики и снижения лишних запросов к базе.</li>
+          <li data-i18n="job1.item3">Закрывал production-инциденты в конкурентном доступе: thread-safe хранение, атомарные операции и разбор многопоточности.</li>
+          <li data-i18n="job1.item4">Проектировал REST API вокруг ролевой модели, фильтрации и расширяемых прав; реализовал RolePermissionsService без изменений core.</li>
+          <li data-i18n="job1.item5">Разбирал рассинхронизацию internal/external контуров, FK-зависимости, routing данных и сбои в JMS/ActiveMQ.</li>
+          <li data-i18n="job1.item6">Дорабатывал CI/CD на Jenkins, Groovy и Shell; собирал окружения на Docker, Tomcat, Solr, Liquibase и PostgreSQL.</li>
         </ul>
       </article>
 
@@ -114,10 +116,10 @@
         </header>
         <ul>
           <li data-i18n="job2.item1">Разрабатывал и поддерживал нативные Android-приложения на Kotlin с MVVM и Single Activity Architecture.</li>
-          <li data-i18n="job2.item2">Улучшал TCP/IP взаимодействие: динамическая буферизация пакетов, стабильный handshake и начальные сообщения.</li>
+          <li data-i18n="job2.item2">Повышал стабильность TCP/IP-взаимодействия: динамическая буферизация пакетов, handshake и стартовые сообщения.</li>
           <li data-i18n="job2.item3">Интегрировал REST API через Retrofit, асинхронные запросы через Coroutines и LiveData.</li>
           <li data-i18n="job2.item4">Настроил GitLab CI, Firebase, Gradle flavors, релизные сборки APK/AAB и публикацию в Google Play.</li>
-          <li data-i18n="job2.item5">Делал Material Design 3 UI, темную тему, локализацию, RTL-поддержку, code review и техдокументацию.</li>
+          <li data-i18n="job2.item5">Работал с Material Design 3, темной темой, локализацией, RTL-поддержкой, code review и техдокументацией.</li>
         </ul>
       </article>
 
@@ -130,10 +132,10 @@
           <span>it</span>
         </header>
         <ul>
-          <li data-i18n="job3.item1">Внедрил IT-регламенты: информационная безопасность, резервное копирование, учетные записи и доступы.</li>
-          <li data-i18n="job3.item2">Настроил YouTrack, интеграцию с корпоративной почтой, обработку инцидентов, контроль SLA и приоритизацию тикетов.</li>
+          <li data-i18n="job3.item1">Внедрил IT-регламенты по информационной безопасности, резервному копированию, учетным записям и доступам.</li>
+          <li data-i18n="job3.item2">Настроил YouTrack, интеграцию с корпоративной почтой, обработку инцидентов, SLA и приоритизацию тикетов.</li>
           <li data-i18n="job3.item3">Администрировал корпоративную сеть, рабочие станции, Linux/Windows-серверы, Active Directory, DNS и DHCP.</li>
-          <li data-i18n="job3.item4">Организовал автоматические бэкапы, проверку восстановлений, антивирусную защиту и мониторинг активности в сети.</li>
+          <li data-i18n="job3.item4">Организовал автоматические бэкапы, проверки восстановления, антивирусную защиту и мониторинг активности сети.</li>
         </ul>
       </article>
     </div>
@@ -147,11 +149,11 @@
       </div>
       <article class="feature">
         <p class="panel-label" data-i18n="projects.label">RAG-система для поиска Jira-задач</p>
-        <h3 data-i18n="projects.heading">От ETL до пользовательского интерфейса</h3>
+        <h3 data-i18n="projects.heading">Поиск, который понимает контекст задач</h3>
         <p data-i18n="projects.text">
-          Реализовал end-to-end решение от загрузки данных до пользовательского интерфейса:
-          ETL из Jira REST API, индексация в Supabase Vector Store, генерация ответов через LangChain и Ollama,
-          мультимодальные запросы через Qwen 2.5 VL и OpenRouter, OCR и парсинг PDF/DOCX на Python.
+          Собрал end-to-end решение: ETL из Jira REST API, индексация в Supabase Vector Store,
+          ответы через LangChain и Ollama, мультимодальные запросы через Qwen 2.5 VL и OpenRouter,
+          OCR и парсинг PDF/DOCX на Python.
         </p>
         <div class="mini-tags" aria-label="Технологии проекта">
           <span>LangChain</span>
