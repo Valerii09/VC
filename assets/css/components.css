@@ -96,12 +96,17 @@
 }
 
 .reveal {
-  opacity: 0;
-  transform: translateY(18px);
+  opacity: 1;
+  transform: none;
   transition: opacity 520ms ease, transform 520ms ease;
 }
 
-.reveal.is-visible {
+.animations-ready .reveal {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+.animations-ready .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
