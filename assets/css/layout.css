@@ -108,3 +108,21 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 620px) {
+  .site-header {
+    position: static;
+  }
+
+  .header-inner {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 12px 0;
+  }
+
+  .header-actions {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    width: 100%;
+  }
+}

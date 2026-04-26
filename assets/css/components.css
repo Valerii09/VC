@@ -1,5 +1,6 @@
 .btn,
-.icon-toggle {
+.icon-toggle,
+.download-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -15,17 +16,21 @@
     border-color var(--speed) ease,
     background var(--speed) ease,
     color var(--speed) ease,
+    box-shadow var(--speed) ease,
     transform var(--speed) ease;
 }
 
-.btn {
+.btn,
+.download-link {
   padding: 0 26px;
 }
 
 .btn:hover,
-.icon-toggle:hover {
+.icon-toggle:hover,
+.download-link:hover {
   transform: translateY(-1px);
   border-color: var(--accent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 12%, transparent);
 }
 
 .btn.primary {
@@ -39,8 +44,31 @@
   font-size: 0.78rem;
 }
 
+.download-link {
+  gap: 10px;
+  min-width: 152px;
+  background: color-mix(in srgb, var(--accent) 18%, var(--surface));
+  border-color: color-mix(in srgb, var(--accent) 54%, var(--line));
+}
+
+.download-link::before {
+  content: "↓";
+  display: inline-grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font-size: 0.88rem;
+  line-height: 1;
+}
+
 .theme-toggle {
   min-width: 70px;
+}
+
+.lang-toggle {
+  min-width: 58px;
 }
 
 .panel-label,
@@ -85,14 +113,29 @@
 .cursor-dot {
   position: fixed;
   z-index: 100;
-  width: 16px;
-  height: 16px;
-  border: 1px solid var(--accent);
+  width: 18px;
+  height: 18px;
+  border: 1px solid color-mix(in srgb, var(--accent) 82%, white);
   border-radius: 50%;
   pointer-events: none;
   opacity: 0;
   transform: translate(-50%, -50%);
-  transition: opacity var(--speed) ease;
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+  box-shadow: 0 0 18px color-mix(in srgb, var(--accent) 70%, transparent);
+  transition:
+    width var(--speed) ease,
+    height var(--speed) ease,
+    opacity var(--speed) ease,
+    border-color var(--speed) ease,
+    background var(--speed) ease;
+  animation: cursorPulse 1.1s ease-in-out infinite;
+}
+
+.cursor-dot.is-hovering {
+  width: 34px;
+  height: 34px;
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  border-color: var(--accent);
 }
 
 .reveal {
@@ -114,5 +157,16 @@
 @media (pointer: coarse) {
   .cursor-dot {
     display: none;
+  }
+}
+
+@keyframes cursorPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 14px color-mix(in srgb, var(--accent) 54%, transparent);
+  }
+
+  50% {
+    box-shadow: 0 0 28px color-mix(in srgb, var(--accent) 86%, transparent);
   }
 }

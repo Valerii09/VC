@@ -9,7 +9,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  <script type="module" src="assets/js/app.js"></script>
+  <script defer src="assets/js/theme.js"></script>
+  <script defer src="assets/js/i18n.js"></script>
+  <script defer src="assets/js/animations.js"></script>
+  <script defer src="assets/js/app.js"></script>
 </head>
 <body>
   <div class="cursor-dot" aria-hidden="true"></div>
@@ -26,8 +29,8 @@
       </nav>
 
       <div class="header-actions">
-        <a class="icon-toggle" href="assets/CV_ru.pdf" download>CV</a>
-        <button class="icon-toggle" type="button" data-lang-toggle aria-label="Switch language">RU</button>
+        <a class="download-link" href="assets/Trufanov_Valerii_CV_ru.pdf.download" download="Trufanov_Valerii_CV_ru.pdf" data-download-cv data-i18n="actions.download">Скачать CV</a>
+        <button class="icon-toggle lang-toggle" type="button" data-lang-toggle aria-label="Switch language">RU</button>
         <button class="icon-toggle theme-toggle" type="button" data-theme-toggle aria-label="Переключить тему">DARK</button>
       </div>
     </div>
@@ -35,7 +38,7 @@
 
   <main id="home" class="hero container">
     <section class="hero-copy reveal" aria-labelledby="hero-title">
-      <p class="status"><span></span><span data-i18n="hero.status">Открыт к сильным backend-проектам</span></p>
+      <p class="status"><span class="status-lamp"></span><span data-i18n="hero.status">Открыт к сильным backend-проектам</span></p>
       <h1 id="hero-title"><span data-i18n="hero.firstName">Валерий</span><br><span class="accent" data-i18n="hero.lastName">Труфанов</span><span class="caret" aria-hidden="true"></span></h1>
       <p class="role" data-i18n="hero.role">Java Backend Developer / Spring / PostgreSQL / CI/CD</p>
       <p class="lead" data-i18n="hero.lead">

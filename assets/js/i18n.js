@@ -6,6 +6,7 @@ const dictionary = {
     "nav.experience": "Опыт",
     "nav.projects": "Проекты",
     "nav.contacts": "Контакты",
+    "actions.download": "Скачать CV",
     "hero.status": "Открыт к сильным backend-проектам",
     "hero.firstName": "Валерий",
     "hero.lastName": "Труфанов",
@@ -56,6 +57,7 @@ const dictionary = {
     "nav.experience": "Experience",
     "nav.projects": "Projects",
     "nav.contacts": "Contacts",
+    "actions.download": "Download CV",
     "hero.status": "Open to strong backend projects",
     "hero.firstName": "Valerii",
     "hero.lastName": "Trufanov",
@@ -103,7 +105,7 @@ const dictionary = {
   }
 };
 
-export function initI18n() {
+function initI18n() {
   const root = document.documentElement;
   const toggle = document.querySelector("[data-lang-toggle]");
   const saved = localStorage.getItem(STORAGE_KEY) || root.lang || "ru";
@@ -130,3 +132,5 @@ export function initI18n() {
     }
   }
 }
+
+window.initI18n = initI18n;

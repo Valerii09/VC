@@ -1,6 +1,6 @@
 const STORAGE_KEY = "personal-card-theme";
 
-export function initTheme() {
+function initTheme() {
   const root = document.documentElement;
   const toggle = document.querySelector("[data-theme-toggle]");
   const saved = localStorage.getItem(STORAGE_KEY);
@@ -16,10 +16,15 @@ export function initTheme() {
   });
 
   function setTheme(theme) {
+    root.classList.add("theme-is-changing");
     root.dataset.theme = theme;
+    window.setTimeout(() => root.classList.remove("theme-is-changing"), 460);
+
     if (toggle) {
       toggle.textContent = theme.toUpperCase();
       toggle.setAttribute("aria-label", theme === "dark" ? "Включить светлую тему" : "Включить темную тему");
     }
   }
 }
+
+window.initTheme = initTheme;

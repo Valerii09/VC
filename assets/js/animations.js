@@ -1,8 +1,9 @@
-export function initAnimations() {
+function initAnimations() {
   initCursor();
   initReveal();
-  initCaret();
 }
+
+window.initAnimations = initAnimations;
 
 function initCursor() {
   const cursor = document.querySelector(".cursor-dot");
@@ -19,10 +20,24 @@ function initCursor() {
   window.addEventListener("pointerleave", () => {
     cursor.style.opacity = "0";
   });
+
+  const interactiveItems = document.querySelectorAll(
+    "a, button, .job, .metrics, .feature, .education, .skill-grid article, .metric-grid article, .contact-grid a"
+  );
+
+  interactiveItems.forEach((item) => {
+    item.addEventListener("pointerenter", () => cursor.classList.add("is-hovering"));
+    item.addEventListener("pointerleave", () => cursor.classList.remove("is-hovering"));
+  });
 }
 
 function initReveal() {
   const items = document.querySelectorAll(".reveal");
+  if (!("IntersectionObserver" in window)) {
+    items.forEach((item) => item.classList.add("is-visible"));
+    return;
+  }
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -33,15 +48,4 @@ function initReveal() {
   }, { threshold: 0.14 });
 
   items.forEach((item) => observer.observe(item));
-}
-
-function initCaret() {
-  const caret = document.querySelector(".caret");
-  if (!caret) {
-    return;
-  }
-
-  window.setInterval(() => {
-    caret.classList.toggle("is-blinking");
-  }, 2600);
 }
