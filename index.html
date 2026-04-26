@@ -25,7 +25,7 @@
       <nav class="nav" aria-label="Основная навигация">
         <a href="#skills" data-i18n="nav.skills">Навыки</a>
         <a href="#experience" data-i18n="nav.experience">Опыт</a>
-        <a href="#projects" data-i18n="nav.projects">Проекты</a>
+        <a href="#projects" data-i18n="nav.projects">Задачи</a>
         <a href="#contacts" data-i18n="nav.contacts">Контакты</a>
       </nav>
 
@@ -47,6 +47,10 @@
         интеграции и стабильный production. Беру на себя REST API, PostgreSQL, ORM/SQL-оптимизацию,
         асинхронную обработку, CI/CD и разбор сложных инцидентов.
       </p>
+      <div class="terminal-lines" aria-label="Backend status">
+        <span>&gt; system.ready = true</span>
+        <span>&gt; backend.status = stable</span>
+      </div>
       <div class="hero-actions">
         <a class="btn primary" href="#contacts" data-i18n="hero.cta">Обсудить задачу</a>
         <a class="btn" href="#skills" data-i18n="hero.secondary">Что я делаю</a>
@@ -56,17 +60,71 @@
     <aside class="metrics reveal" aria-label="Ключевые показатели">
       <p class="panel-label" data-i18n="metrics.title">Ключевые показатели</p>
       <div class="metric-grid">
-        <article><strong>4</strong><span data-i18n="metrics.exp">года опыта: backend, mobile, IT</span></article>
-        <article><strong>3+</strong><span data-i18n="metrics.backend">года Java / Spring Boot</span></article>
-        <article><strong>100k+</strong><span data-i18n="metrics.data">записей в отчетах без падений</span></article>
-        <article><strong>50%</strong><span data-i18n="metrics.speed">быстрее тяжелые отчеты и выборки</span></article>
+        <article>
+          <p data-i18n="metrics.concurrency.label">CONCURRENCY</p>
+          <strong data-i18n="metrics.concurrency.value">thread-safe</strong>
+          <span data-i18n="metrics.concurrency.text">устранение гонок и нестабильности</span>
+        </article>
+        <article>
+          <p data-i18n="metrics.performance.label">PERFORMANCE</p>
+          <strong data-count="50" data-suffix="%">50%</strong>
+          <span data-i18n="metrics.performance.text">оптимизация SQL и ORM</span>
+        </article>
+        <article>
+          <p data-i18n="metrics.access.label">ACCESS</p>
+          <strong data-i18n="metrics.access.value">dynamic</strong>
+          <span data-i18n="metrics.access.text">расширяемая система прав</span>
+        </article>
+        <article>
+          <p data-i18n="metrics.experience.label">EXPERIENCE</p>
+          <strong data-count="4" data-suffix="+">4+</strong>
+          <span data-i18n="metrics.experience.text">года backend-разработки</span>
+        </article>
       </div>
     </aside>
   </main>
 
-  <section id="skills" class="section container">
+  <section id="focus" class="section container engineering-focus">
     <div class="section-title reveal">
       <span>01</span>
+      <h2 data-i18n="focus.title">Engineering focus</h2>
+    </div>
+    <div class="focus-layout">
+      <div class="solve-panel reveal">
+        <p class="panel-label" data-i18n="focus.solveTitle">What I actually solve</p>
+        <div class="solve-grid">
+          <article>
+            <h3 data-i18n="focus.card1">Оптимизация SQL-запросов</h3>
+            <p data-i18n="focus.result1">→ до 50% быстрее: устранение JOIN explosion и проблем ORM</p>
+          </article>
+          <article>
+            <h3 data-i18n="focus.card2">Обработка больших данных</h3>
+            <p data-i18n="focus.result2">→ 100k+ записей без DataSetLimitException и деградации</p>
+          </article>
+          <article>
+            <h3 data-i18n="focus.card3">Production-инциденты</h3>
+            <p data-i18n="focus.result3">→ разбор сложных багов и нестабильных состояний системы</p>
+          </article>
+          <article>
+            <h3 data-i18n="focus.card4">Системы доступа</h3>
+            <p data-i18n="focus.result4">→ сложная ролевая модель и контроль прав на уровне backend</p>
+          </article>
+        </div>
+      </div>
+
+      <aside class="dev-panel reveal" aria-label="System status">
+        <p class="panel-label" data-i18n="system.title">Состояние системы</p>
+        <div class="status-row"><span class="status-dot"></span><span data-i18n="system.status">status:</span><strong data-i18n="system.online">online</strong></div>
+        <div class="status-row"><span class="status-dot"></span><span data-i18n="system.build">build:</span><strong>v1.0.3</strong></div>
+        <div class="status-row"><span class="status-dot"></span><span data-i18n="system.stack">stack:</span><strong>java/spring/postgres</strong></div>
+        <div class="status-row"><span class="status-dot"></span><span data-i18n="system.uptime">uptime:</span><strong data-i18n="system.stable">stable</strong></div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="skills" class="section container">
+    <div class="section-title reveal">
+      <span>02</span>
       <h2 data-i18n="skills.title">Стек и сильные стороны</h2>
     </div>
     <div class="skill-grid reveal">
@@ -84,7 +142,7 @@
 
   <section id="experience" class="section container">
     <div class="section-title reveal">
-      <span>02</span>
+      <span>03</span>
       <h2 data-i18n="experience.title">Опыт работы</h2>
     </div>
     <div class="timeline">
@@ -141,30 +199,30 @@
     </div>
   </section>
 
-  <section id="projects" class="section container split">
-    <div class="reveal">
-      <div class="section-title">
-        <span>03</span>
-        <h2 data-i18n="projects.title">Проектный фокус</h2>
-      </div>
-      <article class="feature">
-        <p class="panel-label" data-i18n="projects.label">RAG-система для поиска Jira-задач</p>
-        <h3 data-i18n="projects.heading">Поиск, который понимает контекст задач</h3>
-        <p data-i18n="projects.text">
-          Собрал end-to-end решение: ETL из Jira REST API, индексация в Supabase Vector Store,
-          ответы через LangChain и Ollama, мультимодальные запросы через Qwen 2.5 VL и OpenRouter,
-          OCR и парсинг PDF/DOCX на Python.
-        </p>
-        <div class="mini-tags" aria-label="Технологии проекта">
-          <span>LangChain</span>
-          <span>Ollama</span>
-          <span>Supabase Vector</span>
-          <span>OpenRouter</span>
-          <span>Python OCR</span>
-          <span>n8n cloud</span>
-        </div>
+  <section id="projects" class="section container problems-section">
+    <div class="section-title reveal">
+      <span>04</span>
+      <h2 data-i18n="projects.title">Решенные задачи</h2>
+    </div>
+
+    <div class="case-list reveal">
+      <article class="case-card">
+        <p class="panel-label" data-i18n="case1.label">SQL optimization</p>
+        <h3 data-i18n="case1.title">Ускорил тяжелые отчеты до 50%</h3>
+        <span data-i18n="case1.result">→ меньше лишних JOIN, ORM-шума и запросов к БД</span>
+      </article>
+      <article class="case-card">
+        <p class="panel-label" data-i18n="case2.label">Large datasets</p>
+        <h3 data-i18n="case2.title">Обрабатывал 100k+ записей без падений</h3>
+        <span data-i18n="case2.result">→ пагинация и стриминг вместо полной загрузки в память</span>
+      </article>
+      <article class="case-card">
+        <p class="panel-label" data-i18n="case3.label">RAG system</p>
+        <h3 data-i18n="case3.title">Собрал поиск по Jira-задачам</h3>
+        <span data-i18n="case3.result">→ ETL, vector store, LLM, OCR и пользовательский интерфейс</span>
       </article>
     </div>
+
     <aside class="education reveal">
       <p class="panel-label" data-i18n="education.label">Образование</p>
       <h3 data-i18n="education.title">Томский политехнический университет</h3>
@@ -177,7 +235,7 @@
 
   <section id="contacts" class="section container contacts">
     <div class="section-title reveal">
-      <span>04</span>
+      <span>05</span>
       <h2 data-i18n="contacts.title">Контакты</h2>
     </div>
     <div class="contact-grid reveal">

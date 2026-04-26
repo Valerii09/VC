@@ -4,7 +4,7 @@ const dictionary = {
   ru: {
     "nav.skills": "Навыки",
     "nav.experience": "Опыт",
-    "nav.projects": "Проекты",
+    "nav.projects": "Задачи",
     "nav.contacts": "Контакты",
     "actions.download": "Скачать CV",
     "hero.status": "Готов к сильным backend-командам",
@@ -15,10 +15,33 @@ const dictionary = {
     "hero.cta": "Обсудить задачу",
     "hero.secondary": "Что я делаю",
     "metrics.title": "Ключевые показатели",
-    "metrics.exp": "года опыта: backend, mobile, IT",
-    "metrics.backend": "года Java / Spring Boot",
-    "metrics.data": "записей в отчетах без падений",
-    "metrics.speed": "быстрее тяжелые отчеты и выборки",
+    "metrics.concurrency.label": "CONCURRENCY",
+    "metrics.concurrency.value": "thread-safe",
+    "metrics.concurrency.text": "устранение гонок и нестабильности",
+    "metrics.performance.label": "PERFORMANCE",
+    "metrics.performance.text": "оптимизация SQL и ORM",
+    "metrics.access.label": "ACCESS",
+    "metrics.access.value": "dynamic",
+    "metrics.access.text": "расширяемая система прав",
+    "metrics.experience.label": "EXPERIENCE",
+    "metrics.experience.text": "года backend-разработки",
+    "focus.title": "Инженерный фокус",
+    "focus.solveTitle": "Что реально решаю",
+    "focus.card1": "Оптимизация SQL-запросов",
+    "focus.result1": "→ до 50% быстрее: устранение JOIN explosion и проблем ORM",
+    "focus.card2": "Обработка больших данных",
+    "focus.result2": "→ 100k+ записей без DataSetLimitException и деградации",
+    "focus.card3": "Production-инциденты",
+    "focus.result3": "→ разбор сложных багов и нестабильных состояний системы",
+    "focus.card4": "Системы доступа",
+    "focus.result4": "→ сложная ролевая модель и контроль прав на уровне backend",
+    "system.title": "Состояние системы",
+    "system.status": "status:",
+    "system.online": "online",
+    "system.build": "build:",
+    "system.stack": "stack:",
+    "system.uptime": "uptime:",
+    "system.stable": "stable",
     "skills.title": "Стек и сильные стороны",
     "skills.backend.label": "Backend",
     "skills.backend.text": "Java 8/17, Spring Boot, Spring Framework 6, REST API",
@@ -58,10 +81,16 @@ const dictionary = {
     "job3.item2": "Настроил YouTrack, интеграцию с корпоративной почтой, обработку инцидентов, SLA и приоритизацию тикетов.",
     "job3.item3": "Администрировал корпоративную сеть, рабочие станции, Linux/Windows-серверы, Active Directory, DNS и DHCP.",
     "job3.item4": "Организовал автоматические бэкапы, проверки восстановления, антивирусную защиту и мониторинг активности сети.",
-    "projects.title": "Проектный фокус",
-    "projects.label": "RAG-система для поиска Jira-задач",
-    "projects.heading": "Поиск, который понимает контекст задач",
-    "projects.text": "Собрал end-to-end решение: ETL из Jira REST API, индексация в Supabase Vector Store, ответы через LangChain и Ollama, мультимодальные запросы через Qwen 2.5 VL и OpenRouter, OCR и парсинг PDF/DOCX на Python.",
+    "projects.title": "Решенные задачи",
+    "case1.label": "SQL optimization",
+    "case1.title": "Ускорил тяжелые отчеты до 50%",
+    "case1.result": "→ меньше лишних JOIN, ORM-шума и запросов к БД",
+    "case2.label": "Large datasets",
+    "case2.title": "Обрабатывал 100k+ записей без падений",
+    "case2.result": "→ пагинация и стриминг вместо полной загрузки в память",
+    "case3.label": "RAG system",
+    "case3.title": "Собрал поиск по Jira-задачам",
+    "case3.result": "→ ETL, vector store, LLM, OCR и пользовательский интерфейс",
     "education.label": "Образование",
     "education.title": "Томский политехнический университет",
     "education.text": "Бакалавр, программная инженерия · 2023",
@@ -73,7 +102,7 @@ const dictionary = {
   en: {
     "nav.skills": "Skills",
     "nav.experience": "Experience",
-    "nav.projects": "Projects",
+    "nav.projects": "Problems",
     "nav.contacts": "Contacts",
     "actions.download": "Download CV",
     "hero.status": "Ready for strong backend teams",
@@ -84,10 +113,33 @@ const dictionary = {
     "hero.cta": "Discuss a task",
     "hero.secondary": "What I do",
     "metrics.title": "Key Metrics",
-    "metrics.exp": "years across backend, mobile, and IT",
-    "metrics.backend": "years with Java / Spring Boot",
-    "metrics.data": "records in reports without crashes",
-    "metrics.speed": "faster heavy reports and selections",
+    "metrics.concurrency.label": "CONCURRENCY",
+    "metrics.concurrency.value": "thread-safe",
+    "metrics.concurrency.text": "race conditions and unstable states resolved",
+    "metrics.performance.label": "PERFORMANCE",
+    "metrics.performance.text": "SQL and ORM optimization",
+    "metrics.access.label": "ACCESS",
+    "metrics.access.value": "dynamic",
+    "metrics.access.text": "extensible permission system",
+    "metrics.experience.label": "EXPERIENCE",
+    "metrics.experience.text": "years of backend development",
+    "focus.title": "Engineering Focus",
+    "focus.solveTitle": "What I actually solve",
+    "focus.card1": "SQL query optimization",
+    "focus.result1": "→ up to 50% faster: JOIN explosion and ORM issues resolved",
+    "focus.card2": "Large data processing",
+    "focus.result2": "→ 100k+ records without DataSetLimitException or degradation",
+    "focus.card3": "Production incidents",
+    "focus.result3": "→ complex bugs and unstable system states investigated",
+    "focus.card4": "Access systems",
+    "focus.result4": "→ complex role model and backend-level permission control",
+    "system.title": "System Status",
+    "system.status": "status:",
+    "system.online": "online",
+    "system.build": "build:",
+    "system.stack": "stack:",
+    "system.uptime": "uptime:",
+    "system.stable": "stable",
     "skills.title": "Stack and Strengths",
     "skills.backend.label": "Backend",
     "skills.backend.text": "Java 8/17, Spring Boot, Spring Framework 6, REST API",
@@ -127,10 +179,16 @@ const dictionary = {
     "job3.item2": "Configured YouTrack, corporate email integration, incident handling, SLA tracking, and ticket prioritization.",
     "job3.item3": "Administered corporate network, workstations, Linux/Windows servers, Active Directory, DNS, and DHCP.",
     "job3.item4": "Organized automated backups, restore checks, antivirus protection, and network activity monitoring.",
-    "projects.title": "Project Focus",
-    "projects.label": "RAG system for Jira task search",
-    "projects.heading": "Search that understands task context",
-    "projects.text": "Built an end-to-end solution: ETL from Jira REST API, indexing in Supabase Vector Store, answers through LangChain and Ollama, multimodal requests via Qwen 2.5 VL and OpenRouter, OCR, and PDF/DOCX parsing in Python.",
+    "projects.title": "Problems Solved",
+    "case1.label": "SQL optimization",
+    "case1.title": "Made heavy reports up to 50% faster",
+    "case1.result": "→ fewer redundant JOINs, ORM overhead, and database calls",
+    "case2.label": "Large datasets",
+    "case2.title": "Processed 100k+ records without crashes",
+    "case2.result": "→ pagination and streaming instead of full memory loading",
+    "case3.label": "RAG system",
+    "case3.title": "Built search over Jira tasks",
+    "case3.result": "→ ETL, vector store, LLM, OCR, and user interface",
     "education.label": "Education",
     "education.title": "Tomsk Polytechnic University",
     "education.text": "Bachelor's degree, Software Engineering · 2023",
@@ -144,8 +202,10 @@ const dictionary = {
 function initI18n() {
   const root = document.documentElement;
   const toggle = document.querySelector("[data-lang-toggle]");
-  const saved = localStorage.getItem(LANGUAGE_STORAGE_KEY) || root.lang || "ru";
+  const saved = readSavedLanguage(root.lang || "ru");
   let transitionTimer = null;
+  let cleanupTimer = null;
+  let watchdogTimer = null;
 
   applyLanguage(saved);
 
@@ -156,13 +216,22 @@ function initI18n() {
 
   function switchLanguage(language) {
     window.clearTimeout(transitionTimer);
+    window.clearTimeout(cleanupTimer);
+    window.clearTimeout(watchdogTimer);
     root.classList.add("language-changing");
 
     transitionTimer = window.setTimeout(() => {
-      applyLanguage(language);
-      localStorage.setItem(LANGUAGE_STORAGE_KEY, language);
-      window.requestAnimationFrame(() => root.classList.remove("language-changing"));
-    }, 150);
+      try {
+        applyLanguage(language);
+        saveLanguage(language);
+      } catch (error) {
+        console.error("Language switch failed", error);
+      } finally {
+        cleanupTimer = window.setTimeout(() => root.classList.remove("language-changing"), 70);
+      }
+    }, 120);
+
+    watchdogTimer = window.setTimeout(() => root.classList.remove("language-changing"), 600);
   }
 
   function applyLanguage(language) {
@@ -180,6 +249,22 @@ function initI18n() {
       const nextLanguage = language === "ru" ? "EN" : "RU";
       toggle.textContent = nextLanguage;
       toggle.setAttribute("aria-label", language === "ru" ? "Switch to English" : "Переключить на русский");
+    }
+  }
+
+  function readSavedLanguage(fallback) {
+    try {
+      return localStorage.getItem(LANGUAGE_STORAGE_KEY) || fallback;
+    } catch {
+      return fallback;
+    }
+  }
+
+  function saveLanguage(language) {
+    try {
+      localStorage.setItem(LANGUAGE_STORAGE_KEY, language);
+    } catch {
+      // Language still switches even when storage is unavailable.
     }
   }
 }
