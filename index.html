@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Валерий Труфанов — Java Backend Developer. Spring Boot, PostgreSQL, Docker, CI/CD, распределенные системы." />
+  <title>Валерий Труфанов — Java Backend Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script type="module" src="assets/js/app.js"></script>
+</head>
+<body>
+  <div class="cursor-dot" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="В начало">~/trufanov.valerii</a>
+
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="#skills" data-i18n="nav.skills">Навыки</a>
+        <a href="#experience" data-i18n="nav.experience">Опыт</a>
+        <a href="#projects" data-i18n="nav.projects">Проекты</a>
+        <a href="#contacts" data-i18n="nav.contacts">Контакты</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="icon-toggle" href="assets/CV_ru.pdf" download>CV</a>
+        <button class="icon-toggle" type="button" data-lang-toggle aria-label="Switch language">RU</button>
+        <button class="icon-toggle theme-toggle" type="button" data-theme-toggle aria-label="Переключить тему">DARK</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="home" class="hero container">
+    <section class="hero-copy reveal" aria-labelledby="hero-title">
+      <p class="status"><span></span><span data-i18n="hero.status">Открыт к сильным backend-проектам</span></p>
+      <h1 id="hero-title"><span data-i18n="hero.firstName">Валерий</span><br><span class="accent" data-i18n="hero.lastName">Труфанов</span><span class="caret" aria-hidden="true"></span></h1>
+      <p class="role" data-i18n="hero.role">Java Backend Developer / Spring / PostgreSQL / CI/CD</p>
+      <p class="lead" data-i18n="hero.lead">
+        Разрабатываю backend-сервисы на Java и Spring Boot для корпоративных систем с большими объемами данных.
+        Основной фокус: REST API, PostgreSQL, ORM/SQL-оптимизация, асинхронная обработка, CI/CD и устойчивость production-сервисов.
+      </p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#contacts" data-i18n="hero.cta">Обсудить задачу</a>
+        <a class="btn" href="#skills" data-i18n="hero.secondary">Что я делаю</a>
+      </div>
+    </section>
+
+    <aside class="metrics reveal" aria-label="Ключевые показатели">
+      <p class="panel-label" data-i18n="metrics.title">Ключевые показатели</p>
+      <div class="metric-grid">
+        <article><strong>4</strong><span data-i18n="metrics.exp">года коммерческого опыта</span></article>
+        <article><strong>100k+</strong><span data-i18n="metrics.data">записей в выборках без OOM</span></article>
+        <article><strong>50%</strong><span data-i18n="metrics.speed">сокращение времени отчетов</span></article>
+        <article><strong>B2</strong><span data-i18n="metrics.lang">английский для рабочих задач</span></article>
+      </div>
+    </aside>
+  </main>
+
+  <section id="skills" class="section container">
+    <div class="section-title reveal">
+      <span>01</span>
+      <h2 data-i18n="skills.title">Стек и компетенции</h2>
+    </div>
+    <div class="skill-grid reveal">
+      <article><p>Backend</p><h3>Java 8/17, Spring Boot, Spring Framework 6, REST API</h3></article>
+      <article><p>Data</p><h3>PostgreSQL, Hibernate, Liquibase, ORM tuning</h3></article>
+      <article><p>Infra</p><h3>Docker, Tomcat, Jenkins, Groovy, Shell</h3></article>
+      <article><p>Search</p><h3>Apache Solr 7, индексация, диагностика</h3></article>
+      <article><p>Async</p><h3>JMS, ActiveMQ, event-driven, concurrency</h3></article>
+      <article><p>Quality</p><h3>JUnit, Mockito, SonarQube, Logback, MDC</h3></article>
+      <article><p>Mobile</p><h3>Kotlin, Android SDK, MVVM, Retrofit</h3></article>
+      <article><p>AI/RAG</p><h3>LangChain, Ollama, Supabase Vector, OpenRouter</h3></article>
+      <article><p>IT Ops</p><h3>Linux, Windows Server, Active Directory, DNS</h3></article>
+    </div>
+  </section>
+
+  <section id="experience" class="section container">
+    <div class="section-title reveal">
+      <span>02</span>
+      <h2 data-i18n="experience.title">Опыт работы</h2>
+    </div>
+    <div class="timeline">
+      <article class="job reveal">
+        <header>
+          <div>
+            <p class="period" data-i18n="job1.period">Май 2024 — настоящее время · Москва</p>
+            <h3>Mirapolis · Java Developer</h3>
+          </div>
+          <span>backend</span>
+        </header>
+        <ul>
+          <li data-i18n="job1.item1">Развивал backend корпоративной LMS-системы для выборок более 100k записей: внедрил безопасную пагинацию и стриминг вместо полной загрузки в память.</li>
+          <li data-i18n="job1.item2">Оптимизировал SQL-запросы и ORM-логику, снижал количество запросов к БД и сокращал время отчетов и выборок до 50%.</li>
+          <li data-i18n="job1.item3">Устранял production-проблемы конкурентного доступа: thread-safe хранение, атомарные операции, разбор многопоточности.</li>
+          <li data-i18n="job1.item4">Разрабатывал REST API с учетом ролевой модели, фильтрации и расширяемой системы прав; реализовал RolePermissionsService без изменения core.</li>
+          <li data-i18n="job1.item5">Диагностировал кластерную рассинхронизацию internal/external контуров, FK-зависимости, routing и проблемы JMS/ActiveMQ.</li>
+          <li data-i18n="job1.item6">Дорабатывал CI/CD на Jenkins, Groovy и Shell; работал с Docker, docker-compose, Tomcat, Solr, Liquibase и PostgreSQL.</li>
+        </ul>
+      </article>
+
+      <article class="job reveal">
+        <header>
+          <div>
+            <p class="period" data-i18n="job2.period">Февраль 2023 — апрель 2024 · Новосибирск</p>
+            <h3>Artlab · Android Developer</h3>
+          </div>
+          <span>mobile</span>
+        </header>
+        <ul>
+          <li data-i18n="job2.item1">Разрабатывал и поддерживал нативные Android-приложения на Kotlin с MVVM и Single Activity Architecture.</li>
+          <li data-i18n="job2.item2">Улучшал TCP/IP взаимодействие: динамическая буферизация пакетов, стабильный handshake и начальные сообщения.</li>
+          <li data-i18n="job2.item3">Интегрировал REST API через Retrofit, асинхронные запросы через Coroutines и LiveData.</li>
+          <li data-i18n="job2.item4">Настроил GitLab CI, Firebase, Gradle flavors, релизные сборки APK/AAB и публикацию в Google Play.</li>
+          <li data-i18n="job2.item5">Делал Material Design 3 UI, темную тему, локализацию, RTL-поддержку, code review и техдокументацию.</li>
+        </ul>
+      </article>
+
+      <article class="job reveal">
+        <header>
+          <div>
+            <p class="period" data-i18n="job3.period">Октябрь 2021 — июнь 2022 · Томск</p>
+            <h3 data-i18n="job3.title">НПП Томская электронная компания · IT-отдел</h3>
+          </div>
+          <span>it</span>
+        </header>
+        <ul>
+          <li data-i18n="job3.item1">Внедрил IT-регламенты: информационная безопасность, резервное копирование, учетные записи и доступы.</li>
+          <li data-i18n="job3.item2">Настроил YouTrack, интеграцию с корпоративной почтой, обработку инцидентов, контроль SLA и приоритизацию тикетов.</li>
+          <li data-i18n="job3.item3">Администрировал корпоративную сеть, рабочие станции, Linux/Windows-серверы, Active Directory, DNS и DHCP.</li>
+          <li data-i18n="job3.item4">Организовал автоматические бэкапы, проверку восстановлений, антивирусную защиту и мониторинг активности в сети.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="projects" class="section container split">
+    <div class="reveal">
+      <div class="section-title">
+        <span>03</span>
+        <h2 data-i18n="projects.title">Проектный фокус</h2>
+      </div>
+      <article class="feature">
+        <p class="panel-label" data-i18n="projects.label">RAG-система для поиска Jira-задач</p>
+        <h3 data-i18n="projects.heading">От ETL до пользовательского интерфейса</h3>
+        <p data-i18n="projects.text">
+          Реализовал end-to-end решение от загрузки данных до пользовательского интерфейса:
+          ETL из Jira REST API, индексация в Supabase Vector Store, генерация ответов через LangChain и Ollama,
+          мультимодальные запросы через Qwen 2.5 VL и OpenRouter, OCR и парсинг PDF/DOCX на Python.
+        </p>
+        <div class="mini-tags" aria-label="Технологии проекта">
+          <span>LangChain</span>
+          <span>Ollama</span>
+          <span>Supabase Vector</span>
+          <span>OpenRouter</span>
+          <span>Python OCR</span>
+          <span>n8n cloud</span>
+        </div>
+      </article>
+    </div>
+    <aside class="education reveal">
+      <p class="panel-label" data-i18n="education.label">Образование</p>
+      <h3 data-i18n="education.title">Томский политехнический университет</h3>
+      <p data-i18n="education.text">Бакалавр, программная инженерия · 2023</p>
+      <hr>
+      <h3 data-i18n="format.title">Формат работы</h3>
+      <p data-i18n="format.text">Полная занятость · офис · удаленно · гибрид · готов к переезду и командировкам</p>
+    </aside>
+  </section>
+
+  <section id="contacts" class="section container contacts">
+    <div class="section-title reveal">
+      <span>04</span>
+      <h2 data-i18n="contacts.title">Контакты</h2>
+    </div>
+    <div class="contact-grid reveal">
+      <a href="mailto:valiera.trufanov.2001@gmail.com"><span>Email</span>valiera.trufanov.2001@gmail.com</a>
+      <a href="tel:+79140049005"><span data-i18n="contacts.phone">Телефон</span>+7 (914) 004-90-05</a>
+      <a href="https://t.me/ValeriiTruvanov" target="_blank" rel="noreferrer"><span>Telegram</span>@ValeriiTruvanov</a>
+      <a href="https://github.com/Valerii09" target="_blank" rel="noreferrer"><span>GitHub</span>github.com/Valerii09</a>
+    </div>
+  </section>
+</body>
+</html>

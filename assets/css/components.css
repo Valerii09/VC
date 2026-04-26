@@ -1,0 +1,113 @@
+.btn,
+.icon-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  transition:
+    border-color var(--speed) ease,
+    background var(--speed) ease,
+    color var(--speed) ease,
+    transform var(--speed) ease;
+}
+
+.btn {
+  padding: 0 26px;
+}
+
+.btn:hover,
+.icon-toggle:hover {
+  transform: translateY(-1px);
+  border-color: var(--accent);
+}
+
+.btn.primary {
+  background: color-mix(in srgb, var(--accent) 22%, var(--surface));
+  border-color: color-mix(in srgb, var(--accent) 60%, var(--line));
+}
+
+.icon-toggle {
+  min-width: 52px;
+  padding: 0 12px;
+  font-size: 0.78rem;
+}
+
+.theme-toggle {
+  min-width: 70px;
+}
+
+.panel-label,
+.status,
+.period,
+.skill-grid p,
+.contact-grid span {
+  font-family: var(--font-mono);
+  color: var(--accent);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.panel-label {
+  margin-bottom: 20px;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.tag,
+.job header > span,
+.mini-tags span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  text-transform: uppercase;
+}
+
+.mini-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.cursor-dot {
+  position: fixed;
+  z-index: 100;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity var(--speed) ease;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 520ms ease, transform 520ms ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (pointer: coarse) {
+  .cursor-dot {
+    display: none;
+  }
+}
