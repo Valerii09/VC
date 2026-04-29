@@ -21,8 +21,9 @@ function initTheme() {
     window.setTimeout(() => root.classList.remove("theme-is-changing"), 460);
 
     if (toggle) {
-      toggle.textContent = theme.toUpperCase();
-      toggle.setAttribute("aria-label", theme === "dark" ? "Включить светлую тему" : "Включить темную тему");
+      const nextTheme = theme === "dark" ? "light" : "dark";
+      toggle.textContent = nextTheme.toUpperCase();
+      toggle.setAttribute("aria-label", nextTheme === "light" ? "Включить светлую тему" : "Включить темную тему");
     }
   }
 }

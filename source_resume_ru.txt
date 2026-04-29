@@ -1,0 +1,118 @@
+Труфанов Валерий Александрович
+Male, 25 years, born on 22 March 2001
+
++7 (914) 0049005
+valiera.trufanov.2001@gmail.com preferred means of communication
+
+Reside in: Moscow
+Citizenship: Russia, work permit at: Russia
+Ready to relocate, ready for business tripsDesired position and salaryJava developer
+Specializations:
+— Programmer, developer
+
+Employment type: full time
+Work format: at the employer's location, remote, hybrid
+travel time to work: anyWork experience 4 yearsMay 2024 till now
+2 years
+Mirapolis
+Moscow, www.mirapolis.ru
+Java developer
+Опыт разработки (Java backend)
+
+Разрабатывал backend корпоративной LMS-системы для обработки больших объёмов данных (>100k записей), внедрив безопасную постраничную загрузку и стриминг вместо полной выборки, что устранило ошибки памяти (DataSetLimitException) и позволило обрабатывать выборки >100k записей без деградации производительности
+Оптимизировал SQL-запросы и ORM-логику, сократив время выполнения отчётов и выборок до 50%.
+Устранил production-ошибки, вызванные параллельной модификацией обработчиков, перевёл базовый компонент на thread-safe хранение и атомарные операции.
+Разрабатывал REST API с учётом ролевой модели доступа, фильтрации и расширяемой системы прав.
+Реализовал механизм динамического расширения прав доступа (RolePermissionsService), позволив подключаемым модулям безопасно добавлять профили без изменения core.
+Устранял сложные проблемы ORM (LazyInitializationException, избыточные JOIN-ы, мультиполя), снижая количество запросов и нагрузку на БД.
+Внедрил централизованное логирование (Logback, MDC), улучшив диагностику и трассировку запросов.
+Работал с Apache Solr: настройка схем, исправление индексации, анализ зависимостей.
+
+Кластерная архитектура и распределённые системы
+
+Разворачивал и сопровождал кластерное окружение(internal / external контуры)
+Диагностировал и устранял проблемы рассинхронизации данных между контурами (INSERT/UPDATE в разных транзакциях, FK-зависимости, routing по типам данных).
+Диагностировал и устранял проблемы в асинхронной обработке (JMS, ActiveMQ): повторная доставка сообщений, зависание consumer-сессий, нарушение порядка обработки
+
+CI/CD и инфраструктура
+
+Работал с Jenkins: дорабатывал CI/CD пайплайны (Jenkins, Groovy, Shell), внедрил фильтрацию клиентских изменений и безопасное слияние веток, снизив риск конфликтов при автослиянии
+Использовал Docker и docker-compose: создавал образы приложений, настраивал сборку и запуск окружений (Java + PostgreSQL + Tomcat + Solr).
+Настраивал миграции баз данных через Liquibase: создание changelog-файлов, откаты и проверка схем.
+Работал с Apache Tomcat (установка, настройка, диагностика проблем при деплое).
+
+Проект: RAG-система для поиска Jira-задач
+
+Реализовал end-to-end решение от загрузки данных до пользовательского интерфейса
+Разработал RAG-систему для внутреннего поиска по задачам Jira.
+Построил ETL-пайплайн загрузки данных из Jira REST API и индексации в Supabase Vector Store.
+Интегрировал LangChain + Ollama для генерации ответов на основе векторного поиска.
+Использовал Qwen 2.5 VL через OpenRouter API для мультимодальных запросов (текст + изображения).
+Добавил OCR и парсинг документов (PDF/DOCX) с помощью Python.
+Автоматизировал вставку и обновление данных через n8n cloud.
+
+Технологии:
+Java 8/17, Spring Framework 6, Spring Boot, Hibernate, PostgreSQL,
+Liquibase, Jenkins, Groovy, Docker, Apache Tomcat, Apache Solr 7, LDAP,
+LangChain, Ollama, Supabase Vector Store, n8n (cloud),
+Qwen 2.5 VL, OpenRouter API, Python (OCR, PDF Parser),
+Jira REST API, concurrencyFebruary 2023 April 2024
+1 year 3 months
+Artlab
+Novosibirsk
+Android developer
+Разрабатывал и поддерживал нативные Android-приложения на Kotlin с использованием архитектуры MVVM и Single Activity Architecture.
+Улучшил клиент-серверное взаимодействие на уровне TCP/IP: реализовал динамическую буферизацию пакетов, повысил стабильность handshake и начальных сообщений.
+Интегрировал REST API через Retrofit, обрабатывал асинхронные запросы с использованием Coroutines и LiveData.
+Настроил CI/CD пайплайн в GitLab CI: автоматическая сборка, запуск unit/instrumented тестов и релизы.
+Интегрировал Firebase (Remote Config, Authentication, Firestore, Crashlytics) для аналитики, A/B-тестирования и безопасности.
+Оптимизировал сборку через Gradle: настройка зависимостей, кастомизация flavor, уменьшение времени сборки.
+Разрабатывал UI по принципам Material Design 3: кастомные копоненты, адаптивные темы, поддержка тёмной темы.
+Выполнял локализацию на несколько языков, включая поддержку RTL-интерфейсов и кастомизацию ресурсов.
+Отвечал за подготовку релизов и публикацию в Google Play Market (форматы APK/AAB, подпись ключами, составление листингов).
+
+Проводил code review, писал техдокументацию, участвовал в планировании задач и рефакторинге ключевых модулей, улучшив читаемость и стабильность кода.
+
+Технологии: Kotlin, Android SDK, Retrofit, Coroutines, LiveData, Firebase, GitLab CI, Gradle, Google Play Console, TCP/IP, MVVM, Material Design.October 2021 June 2022
+9 months
+Томская электронная компания , ООО НПП
+www.npptec.ru
+Electronics, Tool Engineering, Household Appliances, Computers and Office Equipment
+• Computer, Optical, Control and Measurement Technology, Radio and Electronics, Automatics (Promotion, Wholesale)
+• Computer, Optical, Control and Measurement Technology, Radio and Electronics, Automatics (Assembly, Maintenance, Repair)
+• Computer, Optical, Control and Measurement Technology, Radio and Electronics, Automatics (Manufacturing)
+Сотрудник IT отдела
+Разработал и внедрил внутренние IT-регламенты: политика информационной безопасности, порядок резервного копирования, правила управления учётными записями и доступами.
+
+Внедрил систему управления задачами и баг-трекинга YouTrack: настройка, интеграция с корпоративной почтой, автоматизация процессов постановки и обработки задач.
+
+Автоматизировал процессы IT-поддержки: внедрил систему обработки инцидентов, настроил контроль SLA и приоритизацию тикетов.
+
+Администрировал корпоративную сеть: настройка рабочих станций, поддержка пользователей, развёртывание и сопровождение серверов на базе Linux .
+
+Обеспечивал базовую информационную безопасность: контроль доступа (Active Directory), антивирусная защита, мониторинг активности в сети.
+
+Организовал систему резервного копирования и восстановление данных: настройка автоматических бэкапов и проверка восстановлений.
+
+Технологии: Windows Server, Active Directory, Linux (Ubuntu, CentOS), YouTrack, Office 365, bash, TCP/IP, DHCP, DNS, TeamViewer, VNC.EducationBachelor2023
+BachelorНациональный исследовательский Томский политехнический университет, Томск
+ИШИТР, Программная инженерияSkillsLanguagesRussian Native
+English B2 — Upper IntermediateSkillsJava SpringBoot PostgreSQL Jenkins GitHub ApacheTomcat UnitTesting SonarQube JUnit AtlassianJira Mockito StreamAPI ApacheSolr KotlinAdditional informationRecommendationsArtlab
+Artlab (Java разработчик)About meПодробнее, обо мне: http://trufanov.tech
+Тел: 89140049005
+Tg: @ValeriiTruvanov
+Email: valiera.trufanov.2001@gmail.com
+
+Java Backend Developer (3+ года)
+Java / Kotlin / Spring / PostgreSQL / Docker / CI/CD
+
+Разрабатываю backend-сервисы на Java (Spring Boot) в распределённых системах: REST API, асинхронная обработка и работа с реляционными БД.
+
+Основной опыт - развитие корпоративных систем с большим объёмом данных: оптимизация SQL и ORM, устранение узких мест, разбор и устранение production-инцидентов (включая проблемы многопоточности и конкурентного доступа).
+
+Работал с брокерами сообщений (JMS/ActiveMQ), применяю подходы event-driven архитектуры. Участвую в развитии архитектуры сервисов и повышении стабильности системы, включая доработку базовых компонентов и обеспечение потокобезопасности.
+
+Реализовал систему поиска по задачам Jira на базе RAG: спроектировал архитектуру, внедрил ETL-пайплайн, интеграцию с LLM (LangChain, Ollama), векторное хранилище и обработку документов.
+
+Есть опыт разработки Android-приложений (Kotlin)
+GitHub: https://github.com/Valerii09

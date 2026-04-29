@@ -1,40 +1,51 @@
 const LANGUAGE_STORAGE_KEY = "personal-card-language";
+const LANGUAGE_FADE_OUT_MS = 120;
+const LANGUAGE_LAYOUT_UNLOCK_MS = 420;
+const LANGUAGE_LOCK_SELECTORS = [
+  ".site-header",
+  ".hero",
+  "#focus",
+  "#skills",
+  "#experience",
+  "#projects",
+  "#contacts"
+];
 
 const dictionary = {
   ru: {
     "nav.skills": "Навыки",
     "nav.experience": "Опыт",
-    "nav.projects": "Задачи",
+    "nav.projects": "Кейс",
     "nav.contacts": "Контакты",
     "actions.download": "Скачать CV",
-    "hero.status": "Готов к сильным backend-командам",
+    "hero.status": "Java Backend Developer",
     "hero.firstName": "Валерий",
     "hero.lastName": "Труфанов",
-    "hero.role": "Java Backend Developer / Spring / PostgreSQL / CI/CD",
-    "hero.lead": "Проектирую и развиваю Java/Spring Boot backend для корпоративных систем, где важны данные, роли, интеграции и стабильный production. Беру на себя REST API, PostgreSQL, ORM/SQL-оптимизацию, асинхронную обработку, CI/CD и разбор сложных инцидентов.",
+    "hero.role": "Java / Spring / PostgreSQL / Docker",
+    "hero.lead": "Проектирую и развиваю Java/Spring Boot backend для корпоративных систем, где важны данные, роли, интеграции и стабильный production. Беру на себя REST API, PostgreSQL, ORM/SQL-оптимизацию, асинхронную обработку и разбор сложных инцидентов.",
     "hero.cta": "Обсудить задачу",
     "hero.secondary": "Что я делаю",
     "metrics.title": "Ключевые показатели",
-    "metrics.concurrency.label": "CONCURRENCY",
-    "metrics.concurrency.value": "thread-safe",
-    "metrics.concurrency.text": "устранение гонок и нестабильности",
-    "metrics.performance.label": "PERFORMANCE",
-    "metrics.performance.text": "оптимизация SQL и ORM",
-    "metrics.access.label": "ACCESS",
-    "metrics.access.value": "dynamic",
-    "metrics.access.text": "расширяемая система прав",
-    "metrics.experience.label": "EXPERIENCE",
-    "metrics.experience.text": "года backend-разработки",
+    "metrics.concurrency.label": "EXPERIENCE",
+    "metrics.concurrency.value": "3+",
+    "metrics.concurrency.text": "года разработки",
+    "metrics.performance.label": "SQL / ORM",
+    "metrics.performance.text": "ускорение запросов",
+    "metrics.access.label": "DATASETS",
+    "metrics.access.value": "100k+",
+    "metrics.access.text": "записей без OOM",
+    "metrics.experience.label": "DELIVERY",
+    "metrics.experience.text": "задач · 160+ high priority",
     "focus.title": "Инженерный фокус",
     "focus.solveTitle": "Что реально решаю",
-    "focus.card1": "Оптимизация SQL-запросов",
-    "focus.result1": "→ до 50% быстрее: устранение JOIN explosion и проблем ORM",
-    "focus.card2": "Обработка больших данных",
-    "focus.result2": "→ 100k+ записей без DataSetLimitException и деградации",
-    "focus.card3": "Production-инциденты",
-    "focus.result3": "→ разбор сложных багов и нестабильных состояний системы",
-    "focus.card4": "Системы доступа",
-    "focus.result4": "→ сложная ролевая модель и контроль прав на уровне backend",
+    "focus.card1": "Сложные выборки и data layer",
+    "focus.result1": "→ JOIN explosion, ограничения ORM, большие данные",
+    "focus.card2": "Многопоточность и асинхронка",
+    "focus.result2": "→ race conditions, очереди, нестабильные сценарии",
+    "focus.card3": "Поиск и индексация",
+    "focus.result3": "→ согласованность данных и работа Solr",
+    "focus.card4": "Доступ и бизнес-логика",
+    "focus.result4": "→ сложные права и backend-фильтрация",
     "system.title": "Состояние системы",
     "system.status": "status:",
     "system.online": "online",
@@ -81,7 +92,7 @@ const dictionary = {
     "job3.item2": "Настроил YouTrack, интеграцию с корпоративной почтой, обработку инцидентов, SLA и приоритизацию тикетов.",
     "job3.item3": "Администрировал корпоративную сеть, рабочие станции, Linux/Windows-серверы, Active Directory, DNS и DHCP.",
     "job3.item4": "Организовал автоматические бэкапы, проверки восстановления, антивирусную защиту и мониторинг активности сети.",
-    "projects.title": "Решенные задачи",
+    "projects.title": "Практический кейс",
     "case1.label": "SQL optimization",
     "case1.title": "Ускорил тяжелые отчеты до 50%",
     "case1.result": "→ меньше лишних JOIN, ORM-шума и запросов к БД",
@@ -89,8 +100,31 @@ const dictionary = {
     "case2.title": "Обрабатывал 100k+ записей без падений",
     "case2.result": "→ пагинация и стриминг вместо полной загрузки в память",
     "case3.label": "RAG system",
-    "case3.title": "Собрал поиск по Jira-задачам",
-    "case3.result": "→ ETL, vector store, LLM, OCR и пользовательский интерфейс",
+    "case3.title": "Собрал AI-поиск по Jira",
+    "case3.result": "→ 3 n8n workflow: чат, Jira ETL и импорт в vector store",
+    "rag.label": "RAG system",
+    "rag.title": "RAG-система для поиска по Jira",
+    "rag.lead": "Автоматизировал поиск контекста по задачам, комментариям и вложениям Jira.",
+    "rag.problem.label": "Контекст",
+    "rag.problem.text": "→ поиск по задачам, комментариям и вложениям",
+    "rag.scope.label": "Архитектура",
+    "rag.scope.text": "→ ETL + векторная база + LLM",
+    "rag.context.label": "Контекст",
+    "rag.context.text": "Текст задач, комментарии и описания изображений собираются в единый поисковый слой.",
+    "rag.value.label": "Результат",
+    "rag.value.text": "→ убрал необходимость ручного анализа задач",
+    "rag.step1": "Источник Jira",
+    "rag.step1.text": "задачи, темы, комментарии",
+    "rag.step2": "Контекст изображений",
+    "rag.step2.text": "скриншоты → текст",
+    "rag.step3": "Векторный индекс",
+    "rag.step3.text": "фрагменты + embeddings",
+    "rag.step4": "Поиск контекста",
+    "rag.step4.text": "ближайшие Jira-задачи",
+    "rag.step5": "Ответ AI",
+    "rag.step5.text": "ответ из Jira-контекста",
+    "rag.term1": "> source = jira",
+    "rag.term2": "> output = contextual_answer",
     "education.label": "Образование",
     "education.title": "Томский политехнический университет",
     "education.text": "Бакалавр, программная инженерия · 2023",
@@ -102,37 +136,37 @@ const dictionary = {
   en: {
     "nav.skills": "Skills",
     "nav.experience": "Experience",
-    "nav.projects": "Problems",
+    "nav.projects": "Case",
     "nav.contacts": "Contacts",
     "actions.download": "Download CV",
-    "hero.status": "Ready for strong backend teams",
+    "hero.status": "Designing systems for real-world problems",
     "hero.firstName": "Valerii",
     "hero.lastName": "Trufanov",
-    "hero.role": "Java Backend Developer / Spring / PostgreSQL / CI/CD",
-    "hero.lead": "I design and evolve Java/Spring Boot backends for corporate systems where data, roles, integrations, and production stability matter. I work across REST APIs, PostgreSQL, SQL/ORM optimization, async processing, CI/CD, and complex incident analysis.",
+    "hero.role": "Java / Spring / PostgreSQL / Docker",
+    "hero.lead": "I design and evolve Java/Spring Boot backends for corporate systems where data, roles, integrations, and production stability matter. I work across REST APIs, PostgreSQL, SQL/ORM optimization, async processing, and complex incident analysis.",
     "hero.cta": "Discuss a task",
     "hero.secondary": "What I do",
     "metrics.title": "Key Metrics",
-    "metrics.concurrency.label": "CONCURRENCY",
-    "metrics.concurrency.value": "thread-safe",
-    "metrics.concurrency.text": "race conditions and unstable states resolved",
-    "metrics.performance.label": "PERFORMANCE",
-    "metrics.performance.text": "SQL and ORM optimization",
-    "metrics.access.label": "ACCESS",
-    "metrics.access.value": "dynamic",
-    "metrics.access.text": "extensible permission system",
-    "metrics.experience.label": "EXPERIENCE",
-    "metrics.experience.text": "years of backend development",
+    "metrics.concurrency.label": "EXPERIENCE",
+    "metrics.concurrency.value": "3+",
+    "metrics.concurrency.text": "years of development",
+    "metrics.performance.label": "SQL / ORM",
+    "metrics.performance.text": "query speed-up",
+    "metrics.access.label": "DATASETS",
+    "metrics.access.value": "100k+",
+    "metrics.access.text": "records without OOM",
+    "metrics.experience.label": "DELIVERY",
+    "metrics.experience.text": "tasks · 160+ high priority",
     "focus.title": "Engineering Focus",
     "focus.solveTitle": "What I actually solve",
-    "focus.card1": "SQL query optimization",
-    "focus.result1": "→ up to 50% faster: JOIN explosion and ORM issues resolved",
-    "focus.card2": "Large data processing",
-    "focus.result2": "→ 100k+ records without DataSetLimitException or degradation",
-    "focus.card3": "Production incidents",
-    "focus.result3": "→ complex bugs and unstable system states investigated",
-    "focus.card4": "Access systems",
-    "focus.result4": "→ complex role model and backend-level permission control",
+    "focus.card1": "Complex selections and data layer",
+    "focus.result1": "→ JOIN explosion, ORM limits, large data",
+    "focus.card2": "Concurrency and async flows",
+    "focus.result2": "→ race conditions, queues, unstable scenarios",
+    "focus.card3": "Search and indexing",
+    "focus.result3": "→ data consistency and Solr search",
+    "focus.card4": "Access and business logic",
+    "focus.result4": "→ complex permissions and backend filtering",
     "system.title": "System Status",
     "system.status": "status:",
     "system.online": "online",
@@ -179,7 +213,7 @@ const dictionary = {
     "job3.item2": "Configured YouTrack, corporate email integration, incident handling, SLA tracking, and ticket prioritization.",
     "job3.item3": "Administered corporate network, workstations, Linux/Windows servers, Active Directory, DNS, and DHCP.",
     "job3.item4": "Organized automated backups, restore checks, antivirus protection, and network activity monitoring.",
-    "projects.title": "Problems Solved",
+    "projects.title": "Practical Case",
     "case1.label": "SQL optimization",
     "case1.title": "Made heavy reports up to 50% faster",
     "case1.result": "→ fewer redundant JOINs, ORM overhead, and database calls",
@@ -187,8 +221,31 @@ const dictionary = {
     "case2.title": "Processed 100k+ records without crashes",
     "case2.result": "→ pagination and streaming instead of full memory loading",
     "case3.label": "RAG system",
-    "case3.title": "Built search over Jira tasks",
-    "case3.result": "→ ETL, vector store, LLM, OCR, and user interface",
+    "case3.title": "Built AI search over Jira",
+    "case3.result": "→ 3 n8n workflows: chat, Jira ETL, and vector-store import",
+    "rag.label": "RAG system",
+    "rag.title": "RAG system for Jira search",
+    "rag.lead": "Automated context search across Jira tasks, comments, and attachments.",
+    "rag.problem.label": "Context",
+    "rag.problem.text": "→ search across tasks, comments, and attachments",
+    "rag.scope.label": "Architecture",
+    "rag.scope.text": "→ ETL + vector database + LLM",
+    "rag.context.label": "Context",
+    "rag.context.text": "Task text, comments, and image descriptions become one searchable layer.",
+    "rag.value.label": "Outcome",
+    "rag.value.text": "→ removed manual task analysis",
+    "rag.step1": "Jira source",
+    "rag.step1.text": "issues, summaries, comments",
+    "rag.step2": "Image context",
+    "rag.step2.text": "screenshots → text",
+    "rag.step3": "Vector index",
+    "rag.step3.text": "chunks + embeddings",
+    "rag.step4": "Retrieval",
+    "rag.step4.text": "nearest Jira tasks",
+    "rag.step5": "AI answer",
+    "rag.step5.text": "response from Jira context",
+    "rag.term1": "> source = jira",
+    "rag.term2": "> output = contextual_answer",
     "education.label": "Education",
     "education.title": "Tomsk Polytechnic University",
     "education.text": "Bachelor's degree, Software Engineering · 2023",
@@ -206,6 +263,7 @@ function initI18n() {
   let transitionTimer = null;
   let cleanupTimer = null;
   let watchdogTimer = null;
+  let lockedLayout = [];
 
   applyLanguage(saved);
 
@@ -215,10 +273,22 @@ function initI18n() {
   });
 
   function switchLanguage(language) {
+    if (!dictionary[language] || root.lang === language) {
+      return;
+    }
+
     window.clearTimeout(transitionTimer);
     window.clearTimeout(cleanupTimer);
     window.clearTimeout(watchdogTimer);
+    unlockLanguageLayout(lockedLayout);
+    lockedLayout = lockLanguageLayout();
+
     root.classList.add("language-changing");
+    root.classList.add("language-layout-changing");
+
+    if (toggle) {
+      toggle.disabled = true;
+    }
 
     transitionTimer = window.setTimeout(() => {
       try {
@@ -227,11 +297,33 @@ function initI18n() {
       } catch (error) {
         console.error("Language switch failed", error);
       } finally {
-        cleanupTimer = window.setTimeout(() => root.classList.remove("language-changing"), 70);
-      }
-    }, 120);
+        window.requestAnimationFrame(() => {
+          resizeLockedLayout(lockedLayout);
+          root.classList.remove("language-changing");
 
-    watchdogTimer = window.setTimeout(() => root.classList.remove("language-changing"), 600);
+          cleanupTimer = window.setTimeout(() => {
+            unlockLanguageLayout(lockedLayout);
+            lockedLayout = [];
+            root.classList.remove("language-layout-changing");
+
+            if (toggle) {
+              toggle.disabled = false;
+            }
+          }, LANGUAGE_LAYOUT_UNLOCK_MS);
+        });
+      }
+    }, LANGUAGE_FADE_OUT_MS);
+
+    watchdogTimer = window.setTimeout(() => {
+      root.classList.remove("language-changing");
+      root.classList.remove("language-layout-changing");
+      unlockLanguageLayout(lockedLayout);
+      lockedLayout = [];
+
+      if (toggle) {
+        toggle.disabled = false;
+      }
+    }, 1000);
   }
 
   function applyLanguage(language) {
@@ -266,6 +358,39 @@ function initI18n() {
     } catch {
       // Language still switches even when storage is unavailable.
     }
+  }
+
+  function lockLanguageLayout() {
+    return LANGUAGE_LOCK_SELECTORS
+      .flatMap((selector) => Array.from(document.querySelectorAll(selector)))
+      .filter((node, index, nodes) => nodes.indexOf(node) === index)
+      .filter((node) => node.getClientRects().length > 0)
+      .map((node) => {
+        const rect = node.getBoundingClientRect();
+        const previousHeight = node.style.height;
+        const previousOverflow = node.style.overflow;
+
+        node.classList.add("language-layout-lock");
+        node.style.height = `${rect.height}px`;
+        node.style.overflow = "hidden";
+
+        return { node, previousHeight, previousOverflow };
+      });
+  }
+
+  function resizeLockedLayout(items) {
+    items.forEach(({ node }) => {
+      const targetHeight = node.scrollHeight || node.getBoundingClientRect().height;
+      node.style.height = `${targetHeight}px`;
+    });
+  }
+
+  function unlockLanguageLayout(items) {
+    items.forEach(({ node, previousHeight, previousOverflow }) => {
+      node.classList.remove("language-layout-lock");
+      node.style.height = previousHeight;
+      node.style.overflow = previousOverflow;
+    });
   }
 }
 

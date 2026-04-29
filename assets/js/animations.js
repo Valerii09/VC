@@ -2,6 +2,8 @@ function initAnimations() {
   initCursor();
   initReveal();
   initCounters();
+  initTypingTerminal();
+  initScrollProgress();
 }
 
 window.initAnimations = initAnimations;
@@ -23,7 +25,7 @@ function initCursor() {
   });
 
   const interactiveItems = document.querySelectorAll(
-    "a, button, .job, .metrics, .feature, .education, .solve-panel, .dev-panel, .case-card, .skill-grid article, .metric-grid article, .solve-grid article, .contact-grid a"
+    "a, button, .job, .metrics, .feature, .education, .solve-panel, .dev-panel, .case-card, .rag-case, .rag-facts div, .rag-step, .skill-grid article, .metric-grid article, .solve-grid article, .contact-grid a"
   );
 
   interactiveItems.forEach((item) => {
@@ -94,4 +96,70 @@ function animateCounter(counter) {
 
 function setCounterValue(counter, value) {
   counter.textContent = `${value}${counter.dataset.suffix || ""}`;
+}
+
+function initTypingTerminal() {
+  const lines = document.querySelectorAll("[data-typing-text]");
+  if (!lines.length) {
+    return;
+  }
+
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (prefersReducedMotion) {
+    lines.forEach((line) => {
+      line.textContent = line.dataset.typingText || "";
+      line.classList.add("is-typed");
+    });
+    return;
+  }
+
+  lines.forEach((line) => {
+    line.textContent = "";
+    line.classList.add("is-typing");
+  });
+
+  lines.forEach((line, lineIndex) => {
+    const text = line.dataset.typingText || "";
+    let index = 0;
+
+    window.setTimeout(() => {
+      const timer = window.setInterval(() => {
+        line.textContent = text.slice(0, index + 1);
+        index += 1;
+
+        if (index >= text.length) {
+          window.clearInterval(timer);
+          line.classList.remove("is-typing");
+          line.classList.add("is-typed");
+        }
+      }, 28);
+    }, 260 + lineIndex * 760);
+  });
+}
+
+function initScrollProgress() {
+  const progress = document.querySelector("[data-scroll-progress]");
+  if (!progress) {
+    return;
+  }
+
+  let ticking = false;
+
+  function update() {
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    const value = scrollable > 0 ? window.scrollY / scrollable : 0;
+    progress.style.transform = `scaleY(${Math.min(Math.max(value, 0), 1)})`;
+    ticking = false;
+  }
+
+  function requestUpdate() {
+    if (!ticking) {
+      window.requestAnimationFrame(update);
+      ticking = true;
+    }
+  }
+
+  update();
+  window.addEventListener("scroll", requestUpdate, { passive: true });
+  window.addEventListener("resize", requestUpdate);
 }

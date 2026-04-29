@@ -17,6 +17,7 @@
 </head>
 <body>
   <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="scroll-rail" aria-hidden="true"><span data-scroll-progress></span></div>
 
   <header class="site-header">
     <div class="container header-inner">
@@ -25,31 +26,31 @@
       <nav class="nav" aria-label="Основная навигация">
         <a href="#skills" data-i18n="nav.skills">Навыки</a>
         <a href="#experience" data-i18n="nav.experience">Опыт</a>
-        <a href="#projects" data-i18n="nav.projects">Задачи</a>
+        <a href="#projects" data-i18n="nav.projects">Кейс</a>
         <a href="#contacts" data-i18n="nav.contacts">Контакты</a>
       </nav>
 
       <div class="header-actions">
         <button class="download-link" type="button" data-download-cv data-i18n="actions.download">Скачать CV</button>
         <button class="icon-toggle lang-toggle" type="button" data-lang-toggle aria-label="Switch to English">EN</button>
-        <button class="icon-toggle theme-toggle" type="button" data-theme-toggle aria-label="Переключить тему">DARK</button>
+        <button class="icon-toggle theme-toggle" type="button" data-theme-toggle aria-label="Включить светлую тему">LIGHT</button>
       </div>
     </div>
   </header>
 
   <main id="home" class="hero container">
     <section class="hero-copy reveal" aria-labelledby="hero-title">
-      <p class="status"><span class="status-lamp"></span><span data-i18n="hero.status">Готов к сильным backend-командам</span></p>
+      <p class="status"><span class="status-lamp"></span><span data-i18n="hero.status">Java Backend Developer</span></p>
       <h1 id="hero-title"><span data-i18n="hero.firstName">Валерий</span><br><span class="accent" data-i18n="hero.lastName">Труфанов</span><span class="caret" aria-hidden="true"></span></h1>
-      <p class="role" data-i18n="hero.role">Java Backend Developer / Spring / PostgreSQL / CI/CD</p>
+      <p class="role" data-i18n="hero.role">Java / Spring / PostgreSQL / Docker</p>
       <p class="lead" data-i18n="hero.lead">
         Проектирую и развиваю Java/Spring Boot backend для корпоративных систем, где важны данные, роли,
         интеграции и стабильный production. Беру на себя REST API, PostgreSQL, ORM/SQL-оптимизацию,
-        асинхронную обработку, CI/CD и разбор сложных инцидентов.
+        асинхронную обработку и разбор сложных инцидентов.
       </p>
       <div class="terminal-lines" aria-label="Backend status">
-        <span>&gt; system.ready = true</span>
-        <span>&gt; backend.status = stable</span>
+        <span data-typing-text="> system.ready = true">&gt; system.ready = true</span>
+        <span data-typing-text="> backend.status = stable">&gt; backend.status = stable</span>
       </div>
       <div class="hero-actions">
         <a class="btn primary" href="#contacts" data-i18n="hero.cta">Обсудить задачу</a>
@@ -61,24 +62,24 @@
       <p class="panel-label" data-i18n="metrics.title">Ключевые показатели</p>
       <div class="metric-grid">
         <article>
-          <p data-i18n="metrics.concurrency.label">CONCURRENCY</p>
-          <strong data-i18n="metrics.concurrency.value">thread-safe</strong>
-          <span data-i18n="metrics.concurrency.text">устранение гонок и нестабильности</span>
+          <p data-i18n="metrics.concurrency.label">EXPERIENCE</p>
+          <strong data-i18n="metrics.concurrency.value">3+</strong>
+          <span data-i18n="metrics.concurrency.text">года разработки</span>
         </article>
         <article>
-          <p data-i18n="metrics.performance.label">PERFORMANCE</p>
-          <strong data-count="50" data-suffix="%">50%</strong>
-          <span data-i18n="metrics.performance.text">оптимизация SQL и ORM</span>
+          <p data-i18n="metrics.performance.label">SQL / ORM</p>
+          <strong data-count="48" data-suffix="%">48%</strong>
+          <span data-i18n="metrics.performance.text">ускорение запросов</span>
         </article>
         <article>
-          <p data-i18n="metrics.access.label">ACCESS</p>
-          <strong data-i18n="metrics.access.value">dynamic</strong>
-          <span data-i18n="metrics.access.text">расширяемая система прав</span>
+          <p data-i18n="metrics.access.label">DATASETS</p>
+          <strong data-i18n="metrics.access.value">100k+</strong>
+          <span data-i18n="metrics.access.text">записей без OOM</span>
         </article>
         <article>
-          <p data-i18n="metrics.experience.label">EXPERIENCE</p>
-          <strong data-count="4" data-suffix="+">4+</strong>
-          <span data-i18n="metrics.experience.text">года backend-разработки</span>
+          <p data-i18n="metrics.experience.label">DELIVERY</p>
+          <strong data-count="300" data-suffix="+">300+</strong>
+          <span data-i18n="metrics.experience.text">задач · 160+ high priority</span>
         </article>
       </div>
     </aside>
@@ -87,27 +88,27 @@
   <section id="focus" class="section container engineering-focus">
     <div class="section-title reveal">
       <span>01</span>
-      <h2 data-i18n="focus.title">Engineering focus</h2>
+      <h2 data-i18n="focus.title">Инженерный фокус</h2>
     </div>
     <div class="focus-layout">
       <div class="solve-panel reveal">
-        <p class="panel-label" data-i18n="focus.solveTitle">What I actually solve</p>
+        <p class="panel-label" data-i18n="focus.solveTitle">Что реально решаю</p>
         <div class="solve-grid">
           <article>
-            <h3 data-i18n="focus.card1">Оптимизация SQL-запросов</h3>
-            <p data-i18n="focus.result1">→ до 50% быстрее: устранение JOIN explosion и проблем ORM</p>
+            <h3 data-i18n="focus.card1">Сложные выборки и data layer</h3>
+            <p data-i18n="focus.result1">→ JOIN explosion, ограничения ORM, большие данные</p>
           </article>
           <article>
-            <h3 data-i18n="focus.card2">Обработка больших данных</h3>
-            <p data-i18n="focus.result2">→ 100k+ записей без DataSetLimitException и деградации</p>
+            <h3 data-i18n="focus.card2">Многопоточность и асинхронка</h3>
+            <p data-i18n="focus.result2">→ race conditions, очереди, нестабильные сценарии</p>
           </article>
           <article>
-            <h3 data-i18n="focus.card3">Production-инциденты</h3>
-            <p data-i18n="focus.result3">→ разбор сложных багов и нестабильных состояний системы</p>
+            <h3 data-i18n="focus.card3">Поиск и индексация</h3>
+            <p data-i18n="focus.result3">→ согласованность данных и работа Solr</p>
           </article>
           <article>
-            <h3 data-i18n="focus.card4">Системы доступа</h3>
-            <p data-i18n="focus.result4">→ сложная ролевая модель и контроль прав на уровне backend</p>
+            <h3 data-i18n="focus.card4">Доступ и бизнес-логика</h3>
+            <p data-i18n="focus.result4">→ сложные права и backend-фильтрация</p>
           </article>
         </div>
       </div>
@@ -175,7 +176,7 @@
         <ul>
           <li data-i18n="job2.item1">Разрабатывал и поддерживал нативные Android-приложения на Kotlin с MVVM и Single Activity Architecture.</li>
           <li data-i18n="job2.item2">Повышал стабильность TCP/IP-взаимодействия: динамическая буферизация пакетов, handshake и стартовые сообщения.</li>
-          <li data-i18n="job2.item3">Интегрировал REST API через Retrofit, асинхронные запросы через Coroutines и LiveData.</li>
+          <li data-i18n="job2.item3">Интегрировал REST API через Retrofit, асинхронные сценарии через Coroutines и LiveData.</li>
           <li data-i18n="job2.item4">Настроил GitLab CI, Firebase, Gradle flavors, релизные сборки APK/AAB и публикацию в Google Play.</li>
           <li data-i18n="job2.item5">Работал с Material Design 3, темной темой, локализацией, RTL-поддержкой, code review и техдокументацией.</li>
         </ul>
@@ -202,26 +203,75 @@
   <section id="projects" class="section container problems-section">
     <div class="section-title reveal">
       <span>04</span>
-      <h2 data-i18n="projects.title">Решенные задачи</h2>
+      <h2 data-i18n="projects.title">Практический кейс</h2>
     </div>
 
-    <div class="case-list reveal">
-      <article class="case-card">
-        <p class="panel-label" data-i18n="case1.label">SQL optimization</p>
-        <h3 data-i18n="case1.title">Ускорил тяжелые отчеты до 50%</h3>
-        <span data-i18n="case1.result">→ меньше лишних JOIN, ORM-шума и запросов к БД</span>
-      </article>
-      <article class="case-card">
-        <p class="panel-label" data-i18n="case2.label">Large datasets</p>
-        <h3 data-i18n="case2.title">Обрабатывал 100k+ записей без падений</h3>
-        <span data-i18n="case2.result">→ пагинация и стриминг вместо полной загрузки в память</span>
-      </article>
-      <article class="case-card">
-        <p class="panel-label" data-i18n="case3.label">RAG system</p>
-        <h3 data-i18n="case3.title">Собрал поиск по Jira-задачам</h3>
-        <span data-i18n="case3.result">→ ETL, vector store, LLM, OCR и пользовательский интерфейс</span>
-      </article>
-    </div>
+    <article class="rag-case reveal">
+      <div class="rag-copy">
+        <p class="panel-label" data-i18n="rag.label">RAG system</p>
+        <h3 data-i18n="rag.title">RAG-система для поиска по Jira</h3>
+        <p data-i18n="rag.lead">Автоматизировал поиск контекста по задачам, комментариям и вложениям Jira.</p>
+        <div class="rag-facts">
+          <div>
+            <span data-i18n="rag.problem.label">Контекст</span>
+            <p data-i18n="rag.problem.text">→ поиск по задачам, комментариям и вложениям</p>
+          </div>
+          <div>
+            <span data-i18n="rag.scope.label">Архитектура</span>
+            <p data-i18n="rag.scope.text">→ ETL + векторная база + LLM</p>
+          </div>
+          <div>
+            <span data-i18n="rag.value.label">Результат</span>
+            <p data-i18n="rag.value.text">→ убрал необходимость ручного анализа задач</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="rag-visual" aria-label="RAG pipeline">
+        <div class="rag-terminal">
+          <span data-i18n="rag.term1">&gt; source = jira</span>
+          <span data-i18n="rag.term2">&gt; output = contextual_answer</span>
+        </div>
+        <div class="rag-pipeline">
+          <span class="rag-flow" aria-hidden="true"></span>
+          <div class="rag-step">
+            <span>01</span>
+            <div>
+              <strong data-i18n="rag.step1">Источник Jira</strong>
+              <p data-i18n="rag.step1.text">задачи, темы, комментарии</p>
+            </div>
+          </div>
+          <div class="rag-step">
+            <span>02</span>
+            <div>
+              <strong data-i18n="rag.step2">Контекст изображений</strong>
+              <p data-i18n="rag.step2.text">скриншоты → текст</p>
+            </div>
+          </div>
+          <div class="rag-step">
+            <span>03</span>
+            <div>
+              <strong data-i18n="rag.step3">Векторный индекс</strong>
+              <p data-i18n="rag.step3.text">фрагменты + embeddings</p>
+            </div>
+          </div>
+          <div class="rag-step">
+            <span>04</span>
+            <div>
+              <strong data-i18n="rag.step4">Поиск контекста</strong>
+              <p data-i18n="rag.step4.text">ближайшие Jira-задачи</p>
+            </div>
+          </div>
+          <div class="rag-step">
+            <span>05</span>
+            <div>
+              <strong data-i18n="rag.step5">Ответ AI</strong>
+              <p data-i18n="rag.step5.text">ответ из Jira-контекста</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
 
     <aside class="education reveal">
       <p class="panel-label" data-i18n="education.label">Образование</p>
